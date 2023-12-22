@@ -1,0 +1,183 @@
+:root {
+  --mainFont: "Roboto", sans-serif;
+  --secondaryFont: "Roboto Condensed", sans-serif;
+  --primaryColor: #1b90fc;
+  --white: white;
+  --black: #202020;
+}
+
+body {
+  /* border: 10px solid red; */
+  margin: 0;
+  font-family: var(--secondaryFont);
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+button {
+  background-color: var(--primaryColor);
+  color: white;
+  padding-block: 16px;
+  padding-inline: 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 16px;
+}
+
+.wrapper {
+  /* max-inline-size: 1664px; */
+  /* 320 480 1024 1240 1366 1440 1920*/
+  margin: auto;
+  /* border: 1px solid green; */
+}
+
+.hero {
+  background-color: var(--black);
+  /* border: 8px solid red; */
+  background-image: url("./../images/background-loki.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+  position: relative;
+}
+
+.hero::before {
+  background-color: var(--black);
+  /* block-size: 20%; */
+  clip-path: polygon(0 0, calc(100% - 151px) 0, 100% 100%, 0 100%);
+  content: "";
+  display: block;
+  inline-size: 50%;
+  inset-block: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--secondaryFont);
+  font-size: 40px;
+  margin-block-end: 8px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-block-end: 24px;
+}
+
+.hero-content {
+  align-items: center;
+  block-size: 768px;
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+}
+
+.card {
+  max-inline-size: 412px;
+  color: var(--white);
+  z-index: 2;
+}
+
+@media screen and (min-width: 1920px) {
+  .wrapper {
+    max-inline-size: 1664px;
+    /* border: 8px solid red; */
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+  .wrapper {
+    max-inline-size: calc(100% - 166px);
+    /* border: 8px solid green; */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  .wrapper {
+    max-inline-size: none;
+  }
+
+  .hero {
+    background-color: var(--black);
+    background-size: cover;
+    clip-path: unset;
+    max-block-size: 584px;
+  }
+
+  .hero::before {
+    block-size: 70%;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    inset-block: 100%;
+    inline-size: 100%;
+  }
+
+  .hero-content {
+    justify-content: center;
+  }
+
+  .card {
+    max-inline-size: 640px;
+    padding-block-start: 684px;
+  }
+
+  button {
+    inline-size: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    max-inline-size: calc(100% - 48px);
+  }
+
+  .hero {
+    background-color: var(--black);
+    background-size: cover;
+    clip-path: unset;
+    max-block-size: 274px;
+  }
+
+  .hero::before {
+    block-size: 120%;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    inset-block: 100%;
+    inline-size: 100%;
+  }
+
+  .hero img {
+    max-inline-size: 78px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    justify-content: center;
+  }
+
+  .card {
+    max-inline-size: 312px;
+    padding-block-start: 24px;
+  }
+
+  button {
+    inline-size: 100%;
+  }
+}
